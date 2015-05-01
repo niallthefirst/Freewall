@@ -1,0 +1,69 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title> freewall demo getting started</title>
+    
+    <style type="text/css">
+        #container {
+            width: 100%;
+            margin: auto;
+        }
+
+        .item {
+            background: rgb(135, 199, 135);
+            width: 320px;
+            height: 320px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="item">
+            <img src="images/Chrysanthemum.jpg" /></div>
+        <div class="item">
+            <img src="images/Desert.jpg" /></div>
+        <div class="item">
+            <img src="images/Hydrangeas.jpg" /></div>
+        <div class="item">
+            <img src="images/Jellyfish.jpg" /></div>
+        <div class="item">
+            <img src="images/Koala.jpg" /></div>
+        <div class="item">
+            <img src="images/Lighthouse.jpg" /></div>
+        <div class="item">
+<img src="images/Penguins.jpg" /></div>
+    </div>
+    
+
+    <script src="Scripts/jquery-2.1.3.min.js"></script>
+    <script src="Scripts/freewall.js"></script>
+    <script>
+        $(function () {
+            var wall = new freewall("#container");
+
+            wall.fitWidth();
+
+            wall.fixSize({
+                width: 150,
+                height: 150
+            });
+
+            wall.reset({
+                fixSize:1,
+                selector: '.tile',
+                cellW: 100,
+                cellH: 100,
+                animate: true,
+                gutterX: 12,
+                gutterY: 12,
+                onResize: function(){
+                    this.fitWidth();
+                }
+            });
+        });
+        });
+    </script>
+    
+</body>
+</html>
